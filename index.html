@@ -7,14 +7,43 @@
   <meta name="description" content="KPLR creates spatially honest, AI-generated real estate property walkthrough videos — built from what the evidence actually supports." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <section class="hero">
+    <div class="hero-graphic" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#F2600A" stroke-width="1" opacity="0.06" />
+          </pattern>
+        </defs>
+        <rect width="1200" height="800" fill="url(#grid)" />
+
+        <!-- near room outline -->
+        <polygon points="180,140 1020,140 1020,660 180,660" fill="none" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+        <!-- far room outline (perspective) -->
+        <polygon points="420,260 780,260 780,540 420,540" fill="none" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+        <!-- connecting perspective edges -->
+        <line x1="180" y1="140" x2="420" y2="260" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+        <line x1="1020" y1="140" x2="780" y2="260" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+        <line x1="180" y1="660" x2="420" y2="540" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+        <line x1="1020" y1="660" x2="780" y2="540" stroke="#F2600A" stroke-width="1.2" opacity="0.22" />
+
+        <!-- floor plane guide lines -->
+        <line x1="180" y1="660" x2="1020" y2="660" stroke="#F2600A" stroke-width="1" opacity="0.14" />
+        <line x1="300" y1="620" x2="900" y2="620" stroke="#F2600A" stroke-width="1" opacity="0.1" />
+        <line x1="600" y1="140" x2="600" y2="660" stroke="#F2600A" stroke-width="1" opacity="0.08" />
+      </svg>
+    </div>
+
     <div class="hero-inner reveal">
-      <h1 class="wordmark">KPLR</h1>
+      <div class="wordmark-wrap">
+        <h1 class="wordmark">KPLR</h1>
+        <span class="wordmark-rule"></span>
+      </div>
       <p class="tagline">Spatially honest AI property walkthroughs.</p>
     </div>
   </section>
@@ -25,6 +54,17 @@
       walkthrough — built from what the evidence actually supports, not
       what looks good.
     </p>
+  </section>
+
+  <section class="vision">
+    <div class="reveal">
+      <span class="eyebrow">Vision</span>
+      <p>
+        We're redefining how people experience a space before they ever
+        walk into it — where seeing a room on screen is as trustworthy
+        as standing in it.
+      </p>
+    </div>
   </section>
 
   <section class="principles">
@@ -39,6 +79,20 @@
     <div class="principle reveal">
       <h2>Not Spectacle</h2>
       <p>No fake one-takes. No hidden geometry. Just an honest tour.</p>
+    </div>
+  </section>
+
+  <section class="demo">
+    <div class="demo-inner reveal">
+      <h2 class="demo-heading">Demo<br /><span class="accent-text">coming soon.</span></h2>
+      <p class="demo-sub">Be the first to see it.</p>
+
+      <form class="notify-form" id="notifyForm" novalidate>
+        <label for="notifyEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="notifyEmail" name="email" placeholder="you@email.com" autocomplete="email" />
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="notify-message" id="notifyMessage" role="status" aria-live="polite"></p>
     </div>
   </section>
 
